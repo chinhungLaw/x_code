@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html> 
+<head> 
+<title></title> 
+<script src="js/jquery.js" type="text/javascript"></script> 
+<script src="js/qrcode.min.js" type="text/javascript"></script> 
+<script type="text/javascript"> 
+$(function () { 
+$("#bt").bind("click", function () { 
+var text = $("#text").val(); 
+//$("#div_div").qrcode(utf16to8(text)); 
+$("#div_div").html(xMan_qrcode({render: "table",width:200,height:200,correctLevel:0,text:text})); 
+
+}) 
+}) 
+</script>
+</head> 
+<body> 
+<input type="text" id="text" /> 
+<input type="button" value="生成二维码" id="bt" /> 
+<div id="div_div" style="width:400px;height:400px;border:1px solid #000;"></div> 
+
+<div style="font-size:16px;font-weight:700;">
+	以上例子
+</div>
+<div style="font-size:16px;font-weight:700;">
+xMan_qrcode({render: "table",width:200,height:200,correctLevel:0,text:text})
+</div>
+ <br />
+  <br />
+   <br />
+<div style="font-size:16px;">
+Nmae :  qrcode.min.js<br />
+Des:把字符串转化为二维码,支持中文,英文和符号转化.  <br />
+使用方法:  xMan_qrcode(options)   返回 table 或者 canvas <br />
+options{  <br />
+text   转二维码的数据  <br />
+render 设置渲染方式  canvas:table<br />
+width  设置宽度  256<br />
+height 设置高度  256<br />
+correctLevel  纠错级别  0 <br />
+background  背景颜色  #fff<br />
+foreground  前景颜色  #000<br />
+}<br />
+</div>
+</body>
+</html> 
